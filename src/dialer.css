@@ -9,16 +9,15 @@
   text-align: center;
   font-size: 20px;
   color: #ffffff;            /* White phone icon */
-  background-color: #008f4c; /* Brand green background */
+  background-color: #008f4c; /* Brand green */
   border-radius: 50%;
   cursor: pointer;
-  margin-left: 12px;         /* Spacing from other header elements */
+  margin-left: 12px;         /* space FROM “Ask AI” icon */
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
-/* Hover effect for the phone icon */
 #customDialerIcon:hover {
-  background-color: #006a38; /* Darker green */
+  background-color: #006a38;
   transform: scale(1.05);
 }
 
@@ -27,41 +26,39 @@
    ================================ */
 #dialerPopup {
   position: fixed;
-  top: 60px;                 /* Just below the header */
-  right: 20px;               /* Align near right edge */
-  width: 260px;              /* Fixed width */
+  top: 60px;
+  right: 20px;
+  width: 260px;
   padding: 12px 14px 14px;
-  background-color: #ffffff; /* White background */
-  border: 1px solid #d1d5db; /* Light gray border (#d1d5db) */
+  background: #ffffff;
+  border: 1px solid #d1d5db;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   z-index: 9999;
   font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
-  display: none;             /* Hidden by default; toggled by JS */
+  display: none;
 }
 
-/* Input field inside the popup */
 #dialerPopup input[type="tel"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   font-size: 14px;
-  border: 1px solid #cbd5e0;    /* Gray border (#cbd5e0) */
+  border: 1px solid #cbd5e0;
   border-radius: 4px;
-  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 #dialerPopup input[type="tel"]:focus {
   outline: none;
-  border-color: #008f4c;    /* Green border on focus */
+  border-color: #008f4c;
   box-shadow: 0 0 0 2px rgba(0, 143, 76, 0.2);
 }
 
-/* Call button styling */
 #dialerPopup button#triggerCall {
   width: 100%;
-  background-color: #008f4c;   /* Same green as icon */
+  background: #008f4c;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
@@ -69,29 +66,22 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 #dialerPopup button#triggerCall:hover {
-  background-color: #006a38;  /* Darker green */
+  background: #006a38;
   transform: scale(1.02);
-}
-
-/* Optional status message (if you add one in HTML) */
-#dialerPopup .status-message {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #4a5568;             /* Dark gray (#4a5568) */
 }
 
 /* ================================
    3. RESPONSIVE TWEAKS
    ================================ */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   #dialerPopup {
-    width: 220px;     /* Slightly narrower on smaller screens */
-    top: 50px;        /* Adjust vertical position if needed */
-    right: 10px;      /* Slightly less right margin */
+    width: 220px;
+    top: 50px;
+    right: 10px;
     padding: 10px 12px 12px;
   }
   #customDialerIcon {
@@ -102,4 +92,3 @@
     font-size: 18px;
   }
 }
-
