@@ -1,5 +1,5 @@
 (function() {
-  const N8N_URL = 'https://https://n8n.polariss.tech/webhook/c1b52f94-800a-4934-87fa-796bb15f42f7/webhook/ghl-call';
+  const N8N_URL = 'https://n8n.polariss.tech/webhook/c1b52f94-800a-4934-87fa-796bb15f42f7';
 
   const waitForHeader = setInterval(() => {
     // 1. Update selector if your header’s class is different
