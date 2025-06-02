@@ -1,14 +1,105 @@
-/* Example: enlarge the icon hover area */
+/* ================================
+   1. HEADER ICON (#customDialerIcon)
+   ================================ */
+#customDialerIcon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;            /* White phone icon */
+  background-color: #008f4c; /* Brand green background */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 12px;         /* Spacing from other header elements */
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+/* Hover effect for the phone icon */
 #customDialerIcon:hover {
-  color: #008f4c;
+  background-color: #006a38; /* Darker green */
+  transform: scale(1.05);
 }
 
-/* Style the input’s focus */
+/* ================================
+   2. DIALER POPUP (#dialerPopup)
+   ================================ */
+#dialerPopup {
+  position: fixed;
+  top: 60px;                 /* Just below the header */
+  right: 20px;               /* Align near right edge */
+  width: 260px;              /* Fixed width */
+  padding: 12px 14px 14px;
+  background-color: #ffffff; /* White background */
+  border: 1px solid #d1d5db; /* Light gray border (#d1d5db) */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  display: none;             /* Hidden by default; toggled by JS */
+}
+
+/* Input field inside the popup */
+#dialerPopup input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;    /* Gray border (#cbd5e0) */
+  border-radius: 4px;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
 #dialerPopup input[type="tel"]:focus {
-  outline: 2px solid #008f4c;
+  outline: none;
+  border-color: #008f4c;    /* Green border on focus */
+  box-shadow: 0 0 0 2px rgba(0, 143, 76, 0.2);
 }
 
-/* Style the Call button hover */
-#triggerCall:hover {
-  background-color: #006a38;
+/* Call button styling */
+#dialerPopup button#triggerCall {
+  width: 100%;
+  background-color: #008f4c;   /* Same green as icon */
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
+
+#dialerPopup button#triggerCall:hover {
+  background-color: #006a38;  /* Darker green */
+  transform: scale(1.02);
+}
+
+/* Optional status message (if you add one in HTML) */
+#dialerPopup .status-message {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #4a5568;             /* Dark gray (#4a5568) */
+}
+
+/* ================================
+   3. RESPONSIVE TWEAKS
+   ================================ */
+@media screen and (max-width: 768px) {
+  #dialerPopup {
+    width: 220px;     /* Slightly narrower on smaller screens */
+    top: 50px;        /* Adjust vertical position if needed */
+    right: 10px;      /* Slightly less right margin */
+    padding: 10px 12px 12px;
+  }
+  #customDialerIcon {
+    margin-left: 8px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+  }
+}
+
