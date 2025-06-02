@@ -1,0 +1,14 @@
+/* Example: enlarge the icon hover area */
+#customDialerIcon:hover {
+  color: #008f4c;
+}
+
+/* Style the input’s focus */
+#dialerPopup input[type="tel"]:focus {
+  outline: 2px solid #008f4c;
+}
+
+/* Style the Call button hover */
+#triggerCall:hover {
+  background-color: #006a38;
+}
